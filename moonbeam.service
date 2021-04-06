@@ -1,0 +1,40 @@
+[Unit]
+Description="Moonbase Alpha systemd service"
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+User=moonbase_service
+SyslogIdentifier=moonbase
+SyslogFacility=local7
+KillSignal=SIGHUP
+EnvironmentFile=/etc/moonbeam/moonbeam-service.env
+ExecStart=/var/lib/alphanet-data/moonbeam \
+     --parachain-id 1000 \
+     --collator \
+     --author-id $PUBLIC_KEY \
+     --port 30333 \
+     --rpc-port 9933 \
+     --ws-port 9944 \
+     --pruning=archive \
+     --unsafe-rpc-external \
+     --unsafe-ws-external \
+     --rpc-methods=Safe \
+     --log rpc=info \
+     --base-path /var/lib/alphanet-data \
+     --chain alphanet \
+     --name $NODE_NAME \
+     --in-peers 200 \
+     --out-peers 200 \
+     -- \
+     --port 30334 \
+     --rpc-port 9934 \
+     --ws-port 9945 \
+     --pruning=archive \
+     --name="$NODE_NAME (Embedded Relay)"
+
+[Install]
+WantedBy=multi-user.target
