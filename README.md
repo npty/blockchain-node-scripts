@@ -60,7 +60,7 @@ NODE_NAME=YOUR_NODE_NAME
 ## Run Moonbeam Node
 
 ```
-sudo ystemctl enable moonbeam.service
+sudo systemctl enable moonbeam.service
 sudo systemctl start moonbeam.service
 ```
 
