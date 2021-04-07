@@ -53,7 +53,7 @@ PUBLIC_KEY=YOUR_ERC20_ADDRESS
 NODE_NAME=YOUR_NODE_NAME
 ```
 
-### Step 2: 
+### Step 2: Setup systemd service
 
 `curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/master/setup-systemd-service.sh | bash`
 
