@@ -19,7 +19,7 @@ while getopts ":n:z" opt; do
       name=$OPTARG
       ;;
     z )
-      ZONE=$OPTARG
+      zone=$OPTARG
       ;;
     \? )
       echo "Invalid Option: -$OPTARG" 1>&2
