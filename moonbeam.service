@@ -14,7 +14,6 @@ KillSignal=SIGHUP
 EnvironmentFile=/etc/moonbeam/moonbeam-service.env
 ExecStart=/var/lib/alphanet-data/moonbeam \
      --parachain-id 1000 \
-     --collator \
      --author-id $PUBLIC_KEY \
      --port 30333 \
      --rpc-port 9933 \
