@@ -67,8 +67,8 @@ if [ $? == 0 ]; then
   echo "Firewall is already existed. Skipping firewall creation."
 else
   gcloud compute firewall-rules create $FIREWALL_NAME \
-    --allow=tcp:7153,udp:7153 \
-    --description="Allow incoming traffic on TCP port 7153 and UDP port 7153" \
+    --allow=tcp:7513,udp:7513 \
+    --description="Allow incoming traffic on TCP port 7513 and UDP port 7513" \
     --target-tags=$INSTANCE_TAG
 fi
 

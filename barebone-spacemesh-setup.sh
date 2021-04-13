@@ -44,6 +44,5 @@ mv cli_wallet_linux_amd64 cli_wallet
 # ./go-spacemesh --tcp-port 7152 \
 #   --config ./config.json \
 #   -d ./sm_data \
-#   --coinbase $YOUR_WALLET_ADDRESS \
 #   --start-mining \
 #   --post-datadir ./post_data

@@ -5,7 +5,7 @@ This repo provides a set of utility scripts for running Spacemesh's node.
 | Requirement                                          	| Passed 	|
 |------------------------------------------------------	|--------	|
 | 4-cores-cpu-and-8-gb-ram-and-350GB-storage instance. 	| ✅      |
-| Allow tcp 7153 and udp 7153 ports                     | ✅      |
+| Allow tcp 7513 and udp 7513 ports                     | ✅      |
 | SSH into an instance                                 	| ✅      |
 | Stressfree                                           	| ✅      |
 
@@ -42,9 +42,9 @@ Run the following command to run all required steps:
 
 Then you can try running go-spacemesh with
 ```bash
-./go-spacemesh --tcp-port 7152 \
+./go-spacemesh --tcp-port 7513 \
   --config ./config.json \
-  -d ./sm_data \
+  -d ./sm_data
 ```
 
 ## Setup systemd service
