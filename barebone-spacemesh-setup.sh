@@ -1,0 +1,49 @@
+#!/bin/sh
+sudo apt-get install -y git make
+
+# # Install Go 1.16.3
+go_file=go1.16.3.linux-amd64.tar.gz
+curl -O "https://dl.google.com/go/$go_file"
+
+# Verify binary checksum
+go_chksum=$(sha256sum $go_file | awk '{print $1}')
+if [[ "951a3c7c6ce4e56ad883f97d9db74d3d6d80d5fec77455c6ada6c1f7ac4776d2" == $go_chksum ]]; then
+  echo "checksum is valid ✅"
+else
+  echo "checksum is invalid ❌"
+  exit 1
+fi
+
+# Setting up go path
+tar xvf $go_file
+sudo chown -R root:root ./go
+sudo mv go /usr/local
+echo "export GOPATH=$HOME/work" >~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
+source ~/.profile
+
+# Build binary from source
+mkdir work && cd work
+git clone https://github.com/spacemeshos/go-spacemesh.git
+cd go-spacemesh
+make install && make build
+cd build
+
+## Part 2: Setup CLI Wallet
+cd ~/work
+git clone https://github.com/spacemeshos/cli-wallet.git
+cd cli-wallet
+go get && go build
+make build-linux
+mv cli_wallet_linux_amd64 cli_wallet
+
+# Then setup cli wallet accounts here.
+# ./cli_wallet
+
+#
+# ./go-spacemesh --tcp-port 7152 \
+#   --config ./config.json \
+#   -d ./sm_data \
+#   --coinbase $YOUR_WALLET_ADDRESS \
+#   --start-mining \
+#   --post-datadir ./post_data

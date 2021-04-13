@@ -42,7 +42,7 @@ gcloud compute instances create "$name" \
   --image-family=debian-10 \
   --image-project=debian-cloud
 
-# Resize disk space for an instance to 50GB
+# Resize disk space for an instance to 350GB
 echo "Y" | gcloud compute disks resize $name \
   --zone=$zone \
   --size=350
