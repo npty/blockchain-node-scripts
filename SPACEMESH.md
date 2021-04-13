@@ -47,21 +47,13 @@ Run the following command to run all required steps:
 Place the following content at /etc/moonbeam/moonbeam-service.env
 
 ```
-PUBLIC_KEY=YOUR_ERC20_ADDRESS
+PUBLIC_KEY=YOUR_GENERATED_ADDRESS
 NODE_NAME=YOUR_NODE_NAME
 ```
 
 ### Step 2: Setup Systemd Services
 
 > Coming soon
-
-## Upgrade Moonbeam Node
-
-`sudo systemctl stop moonbeam`
-
-Then, rerun setup Moonbeam Node script.
-
-Once it completed, run `sudo systemctl start moonbeam.service`
 
 License
 =======
