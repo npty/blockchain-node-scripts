@@ -34,11 +34,18 @@ curl https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/creat
 
 > Note: Replace YOUR_INSTANCE_NAME with your desired name.
 
-## Setup Moonbeam Node
+## Setup Spacemesh Node
 
 Run the following command to run all required steps:
 
 `curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/barebone-spacemesh-setup.sh | bash`
+
+Then you can try running go-spacemesh with
+```bash
+./go-spacemesh --tcp-port 7152 \
+  --config ./config.json \
+  -d ./sm_data \
+```
 
 ## Setup systemd service
 
