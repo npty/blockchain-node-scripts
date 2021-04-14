@@ -55,10 +55,24 @@ Place the following content at /etc/moonbeam/moonbeam-service.env
 
 ```
 PUBLIC_KEY=YOUR_GENERATED_ADDRESS
-NODE_NAME=YOUR_NODE_NAME
 ```
 
 ### Step 2: Setup Systemd Services
+
+`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/setup-systemd-service-spacemesh.sh | bash`
+
+## Run Moonbeam Node
+
+```
+sudo systemctl enable spacemesh.service
+sudo systemctl start spacemesh.service
+```
+
+You can verify the service is running with:
+`sudo systemctl status spacemesh.service`
+
+You can also check the logs by executing:
+`sudo journalctl -f -u spacemesh.service`
 
 > Coming soon
 
