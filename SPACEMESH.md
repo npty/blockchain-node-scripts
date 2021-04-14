@@ -51,7 +51,7 @@ Then you can try running go-spacemesh with
 
 ### Step 1: Prepare Environment Variables
 
-Place the following content at /etc/spacemesh/spacemesh-service.env
+Place the following content at `/etc/spacemesh/spacemesh-service.env`
 
 ```
 PUBLIC_KEY=YOUR_GENERATED_ADDRESS
@@ -59,7 +59,7 @@ PUBLIC_KEY=YOUR_GENERATED_ADDRESS
 
 ### Step 2: Setup Systemd Services
 
-`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/setup-systemd-service-spacemesh.sh | bash`
+`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/setup-systemd-service-spacemesh.sh | bash -s YOUR_WALLET_ADDRESS`
 
 ## Run Spacemesh Systemd Service
 
