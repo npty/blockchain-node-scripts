@@ -41,7 +41,7 @@ mv cli_wallet_linux_amd64 cli_wallet
 # ./cli_wallet
 
 #
-# ./go-spacemesh --tcp-port 7152 \
+# ./go-spacemesh --tcp-port 7513 \
 #   --config ./config.json \
 #   -d ./sm_data \
 #   --start-mining \
