@@ -3,9 +3,11 @@
 echo "Setting up systemd service..."
 
 sudo adduser spacemesh_service --system --no-create-home
-sudo mkdir /var/lib/spacemesh-data
-sudo mkdir /etc/spacemesh
-sudo echo "PUBLIC_KEY=$1" >/etc/spacemesh/spacemesh-service.env
+sudo mkdir -p /var/lib/spacemesh-data
+sudo mkdir -p /etc/spacemesh
+if [ ! -f "/etc/spacemesh/spacemesh-service.env" ]; then
+  sudo echo "PUBLIC_KEY=$1" >/etc/spacemesh/spacemesh-service.env
+fi
 sudo chown spacemesh_service /var/lib/spacemesh-data
 sudo cp $(find /home -type d -name 'go-spacemesh' | head -n 1)/build/go-spacemesh /var/lib/spacemesh-data
 sudo curl https://discover.spacemesh.io/conf/28/config.json --output /var/lib/spacemesh-data/config.json
