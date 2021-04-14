@@ -1,0 +1,24 @@
+[Unit]
+Description="Spacemesh systemd service"
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+User=spacemesh_service
+SyslogIdentifier=spacemesh
+SyslogFacility=local7
+KillSignal=SIGHUP
+EnvironmentFile=/etc/spacemesh/spacemesh-service.env
+ExecStart=/var/lib/spacemesh-data/go-spacemesh \
+ --tcp-port 7513 \
+ --config ./config.json \
+ -d ./sm_data \
+ --coinbase $PUBLIC_KEY \
+ --start-mining \
+ --post-datadir ./post_data
+
+[Install]
+WantedBy=multi-user.target
