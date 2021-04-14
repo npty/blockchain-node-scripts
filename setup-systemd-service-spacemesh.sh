@@ -2,7 +2,7 @@
 
 echo "Setting up systemd service..."
 
-sudo adduser spacemesh_service --system --no-create-home
+sudo adduser spacemesh_service --system --no-create-home 2> /dev/null
 sudo mkdir -p /var/lib/spacemesh-data
 sudo mkdir -p /etc/spacemesh
 if [ ! -f "/etc/spacemesh/spacemesh-service.env" ]; then
