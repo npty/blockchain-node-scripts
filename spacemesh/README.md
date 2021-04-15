@@ -42,20 +42,6 @@ Run the following command to run all required steps:
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/barebone-spacemesh-setup.sh | bash`
 
-`cd work/go-spacemesh/build`
-
-```
-sudo curl https://discover.spacemesh.io/conf/28/config.json --output config.json
-```
-
-Then you can try running go-spacemesh with
-
-```bash
-./go-spacemesh --tcp-port 7153 \
-  --config ./config.json \
-  -d ./sm_data
-```
-
 ## Setup systemd service
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s YOUR_WALLET_ADDRESS`

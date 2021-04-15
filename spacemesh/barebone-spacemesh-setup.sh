@@ -24,7 +24,7 @@ source ~/.profile
 
 # Build binary from source
 mkdir work && cd work
-git clone --depth 1 --branch v0.1.28 git@github.com:spacemeshos/go-spacemesh.git
+git clone --depth 1 --branch v0.1.28 https://github.com/spacemeshos/go-spacemesh.git
 cd go-spacemesh
 make install && make build
 cd build
