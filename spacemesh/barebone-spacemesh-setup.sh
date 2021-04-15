@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt-get install -y git make
+sudo apt-get install -y git make unzip rsync
 
 # # Install Go 1.16.3
 go_file=go1.16.3.linux-amd64.tar.gz
