@@ -21,7 +21,7 @@ Initialize the cloud sdk, follow the steps [here](https://cloud.google.com/sdk/d
 
 At the end, you should have logged-in account and selected cloud project.
 
-## Create Google Cloud Compute Instance
+## Create Google Cloud Compute Instance (Skip if you have your own instance)
 
 Run the command below
 
