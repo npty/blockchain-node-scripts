@@ -1,4 +1,4 @@
-# Blockchain Node Utility Scripts
+# Blockchain Node Scripts
 
 This repo contains a set of shell scripts to run nodes for supported project.
 
