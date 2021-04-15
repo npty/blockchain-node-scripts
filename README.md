@@ -1,6 +1,6 @@
 # Blockchain Node Scripts
 
-This repo contains a set of shell scripts to run nodes for supported project.
+This repo contains a set of shell scripts to run blockchain node for supported projects.
 
 These features are supported:
 
@@ -10,7 +10,7 @@ These features are supported:
 - Create a systemd service so you can disconnect without stopping the node.
 - Run and enjoy 🚀
 
-The tool is made to supported people interested to run node quickly without having to read the project documentation.
+This tool is made to supported people interested to run node quickly without having to read the project documentation.
 
 Unfortunately, I'm not expected to maintain it in the long run especially when my interests drops.
 
@@ -20,8 +20,8 @@ Enjoys 🙂
 
 The supported projects are:
 
-- [Moonbeam](https://github.com/npty/blockchain-node-scripts/moonbeam)
-- [Spacemesh](https://github.com/npty/blockchain-node-scripts/spacemesh)
+- [Moonbeam](https://github.com/npty/blockchain-node-scripts/tree/master/moonbeam)
+- [Spacemesh](https://github.com/npty/blockchain-node-scripts/tree/master/spacemesh)
 
 # License
 
