@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt-get install -y git make
+sudo apt-get install -y git make unzip rsync
 
 # # Install Go 1.16.3
 go_file=go1.16.3.linux-amd64.tar.gz
@@ -18,9 +18,12 @@ fi
 tar xvf $go_file
 sudo chown -R root:root ./go
 sudo mv go /usr/local
-echo "export GOPATH=$HOME/work" >~/.profile
-echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
-source ~/.profile
+
+if [ ! -f $HOME/.profile ]; then
+  echo "export GOPATH=$HOME/work" >~/.profile
+  echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
+  source ~/.profile
+fi
 
 # Build binary from source
 mkdir work && cd work
