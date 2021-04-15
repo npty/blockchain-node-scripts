@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Default value for arguments
-name=custom-node
+name=moonbeam-node
 zone=asia-southeast2-a
 
 # Constants
@@ -10,25 +10,25 @@ INSTANCE_TAG=tag-polkadot-node
 
 # Parsing arguments
 ## ----- Accepted arguments ------
-## -n -> instance name 
+## -n -> instance name
 ## -z -> instance zone to be created (see all availables zones with: `gcloud compute zones list`)
 
 while getopts ":n:z" opt; do
   case ${opt} in
-    n )
-      name=$OPTARG
-      ;;
-    z )
-      zone=$OPTARG
-      ;;
-    \? )
-      echo "Invalid Option: -$OPTARG" 1>&2
-      exit 1
-      ;;
-    : )
-      echo "Invalid Option: -$OPTARG requires an argument" 1>&2
-      exit 1
-      ;;
+  n)
+    name=$OPTARG
+    ;;
+  z)
+    zone=$OPTARG
+    ;;
+  \?)
+    echo "Invalid Option: -$OPTARG" 1>&2
+    exit 1
+    ;;
+  :)
+    echo "Invalid Option: -$OPTARG requires an argument" 1>&2
+    exit 1
+    ;;
   esac
 done
 
@@ -61,7 +61,7 @@ gcloud compute instances add-tags "$name" \
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
 
-gcloud compute firewall-rules list | grep $FIREWALL_NAME &> /dev/null
+gcloud compute firewall-rules list | grep $FIREWALL_NAME &>/dev/null
 
 if [ $? == 0 ]; then
   echo "Firewall is already existed. Skipping firewall creation."
@@ -76,5 +76,4 @@ fi
 sleep 10s
 
 # SSH to the instance
-gcloud beta compute ssh "$name" --zone "$zone" 2> /dev/null
-
+gcloud beta compute ssh "$name" --zone "$zone" 2>/dev/null

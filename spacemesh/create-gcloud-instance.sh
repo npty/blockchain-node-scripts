@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Default value for arguments
-name=custom-node
+name=spacemesh-node
 zone=asia-southeast2-a
 
 # Constants

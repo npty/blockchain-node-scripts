@@ -1,85 +1,30 @@
-# Moonbeam Scripts
+# Blockchain Node Utility Scripts
 
-This repo provides a set of utility scripts for running Moonbeam's node.
+This repo contains a set of shell scripts to run nodes for supported project.
 
-| Requirement                                          	| Passed 	|
-|------------------------------------------------------	|--------	|
-| 8-cores-cpu-and-16-gb-ram-and-50GB-storage instance. 	| ✅      	|
-| Allow tcp 30333 and 30334 ports                      	| ✅      	|
-| SSH into an instance                                 	| ✅      	|
-| Stressfree                                           	| ✅      	|
+These features are supported:
 
-## Prerequisite
+- Create the Google Cloud Compute Engine instance which matched with system requirement of the project
+- Create the firewall rule for the instance to allow required ports.
+- Install dependencies, setup environment variables, clone the project and build a binary.
+- Create a systemd service so you can disconnect without stopping the node.
+- Run and enjoy 🚀
 
-### Step 1
-Make sure you have `gcloud` cli installed. 
+The tool is made to supported people interested to run node quickly without having to read the project documentation.
 
-If you don't have it, please follow installation step [here](https://cloud.google.com/sdk/docs/quickstart)
+Unfortunately, I'm not expected to maintain it in the long run especially when my interests drops.
 
-### Step 2
-Initialize the cloud sdk, follow the steps [here](https://cloud.google.com/sdk/docs/quickstart#initializing_the)
+So if that happens and you want to continue the development, don't hesitate to fork it and contact [me](nptytn2@gmail.com) to put a link to your forked project in README.
 
-At the end, you should have logged-in account and selected cloud project.
+Enjoys 🙂
 
-## Create Google Cloud Compute Instance
+The supported projects are:
 
-Run the command below
+- [Moonbeam](https://github.com/npty/moonbeam-node-script/moonbeam)
+- [Spacemesh](https://github.com/npty/moonbeam-node-script/spacemesh)
 
-```
-curl https://raw.githubusercontent.com/npty/moonbeam-node-script/master/create-gcloud-instance.sh \
-    --output create-gcloud-instance.sh && \
-    chmod +x create-gcloud-instance.sh && \
-    ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
-```
+# License
 
-> Note: Replace YOUR_INSTANCE_NAME with your desired name.
-
-## Setup Moonbeam Node
-
-This is basically put every commands [here](https://docs.moonbeam.network/getting-started/local-node/setting-up-a-node/) into one shell script file.
-
-Run the following command to run all required steps:
-
-`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/master/barebone-moonbeam-setup.sh | bash`
-
-## Setup systemd service
-
-### Step 1: Prepare Environment Variables
-
-Place the following content at /etc/moonbeam/moonbeam-service.env
-
-```
-PUBLIC_KEY=YOUR_ERC20_ADDRESS
-NODE_NAME=YOUR_NODE_NAME
-```
-
-### Step 2: Setup systemd service
-
-`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/master/setup-systemd-service.sh | bash`
-
-## Run Moonbeam Node
-
-```
-sudo systemctl enable moonbeam.service
-sudo systemctl start moonbeam.service
-```
-
-You can verify the service is running with:
-`sudo systemctl status moonbeam.service`
-
-You can also check the logs by executing:
-`sudo journalctl -f -u moonbeam.service`
-
-## Upgrade Moonbeam Node
-
-`sudo systemctl stop moonbeam`
-
-Then, rerun setup Moonbeam Node script. 
-
-Once it completed, run `sudo systemctl start moonbeam.service`
-
-License
-=======
     Copyright 2021 nopantytonight ✨
 
     Licensed under the Apache License, Version 2.0 (the "License");
