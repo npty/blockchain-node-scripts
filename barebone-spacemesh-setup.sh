@@ -24,7 +24,7 @@ source ~/.profile
 
 # Build binary from source
 mkdir work && cd work
-git clone https://github.com/spacemeshos/go-spacemesh.git
+git clone --depth 1 --branch v0.1.28 git@github.com:spacemeshos/go-spacemesh.git
 cd go-spacemesh
 make install && make build
 cd build
@@ -35,14 +35,3 @@ git clone https://github.com/spacemeshos/cli-wallet.git
 cd cli-wallet
 go get && go build
 make build-linux
-mv cli_wallet_linux_amd64 cli_wallet
-
-# Then setup cli wallet accounts here.
-# ./cli_wallet
-
-#
-# ./go-spacemesh --tcp-port 7513 \
-#   --config ./config.json \
-#   -d ./sm_data \
-#   --start-mining \
-#   --post-datadir ./post_data

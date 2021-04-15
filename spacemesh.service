@@ -13,12 +13,12 @@ SyslogFacility=local7
 KillSignal=SIGHUP
 EnvironmentFile=/etc/spacemesh/spacemesh-service.env
 ExecStart=/var/lib/spacemesh-data/go-spacemesh \
- --tcp-port 7513 \
- --config ./config.json \
- -d ./sm_data \
+ --tcp-port 7153 \
+ --config /var/lib/spacemesh-data/config.json \
+ -d /var/lib/spacemesh-data/sm_data \
  --coinbase $PUBLIC_KEY \
  --start-mining \
- --post-datadir ./post_data
+ --post-datadir /var/lib/spacemesh-data/post_data
 
 [Install]
 WantedBy=multi-user.target

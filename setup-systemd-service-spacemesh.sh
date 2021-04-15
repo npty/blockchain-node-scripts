@@ -8,11 +8,9 @@ sudo mkdir -p /etc/spacemesh
 if [ ! -f "/etc/spacemesh/spacemesh-service.env" ]; then
   sudo bash -c 'echo "PUBLIC_KEY=$1" >/etc/spacemesh/spacemesh-service.env'
 fi
-sudo chown spacemesh_service /var/lib/spacemesh-data
+sudo chown -R spacemesh_service /var/lib/spacemesh-data
 sudo cp $(find /home -type d -name 'go-spacemesh' | head -n 1)/build/go-spacemesh /var/lib/spacemesh-data
 sudo curl https://discover.spacemesh.io/conf/28/config.json --output /var/lib/spacemesh-data/config.json
 sudo curl https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/spacemesh.service --output /etc/systemd/system/spacemesh.service
-sudo mkdir -pm 775 /var/lib/spacemesh-data/sm_data
-sudo mkdir -pm 775 /var/lib/spacemesh-data/post_data
 
 echo "Moonbeam systemd service has been setup successfully."

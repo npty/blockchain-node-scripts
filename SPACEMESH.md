@@ -5,7 +5,7 @@ This repo provides a set of utility scripts for running Spacemesh's node.
 | Requirement                                          	| Passed 	|
 |------------------------------------------------------	|--------	|
 | 4-cores-cpu-and-8-gb-ram-and-350GB-storage instance. 	| ✅      |
-| Allow tcp 7513 and udp 7513 ports                     | ✅      |
+| Allow tcp 7153 and udp 7153 ports                     | ✅      |
 | SSH into an instance                                 	| ✅      |
 | Stressfree                                           	| ✅      |
 
@@ -40,32 +40,35 @@ Run the following command to run all required steps:
 
 `curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/barebone-spacemesh-setup.sh | bash`
 
+`cd work/go-spacemesh/build`
+
+```
+sudo curl https://discover.spacemesh.io/conf/28/config.json --output config.json
+```
+
 Then you can try running go-spacemesh with
 ```bash
-./go-spacemesh --tcp-port 7513 \
+./go-spacemesh --tcp-port 7153 \
   --config ./config.json \
   -d ./sm_data
 ```
 
 ## Setup systemd service
 
-### Step 1: Prepare Environment Variables
-
-Place the following content at `/etc/spacemesh/spacemesh-service.env`
-
-```
-PUBLIC_KEY=YOUR_GENERATED_ADDRESS
-```
-
-### Step 2: Setup Systemd Services
-
 `curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/spacemesh/setup-systemd-service-spacemesh.sh | bash -s YOUR_WALLET_ADDRESS`
 
 ## Run Spacemesh Systemd Service
 
+Start the service
 ```
 sudo systemctl enable spacemesh.service
 sudo systemctl start spacemesh.service
+```
+
+Stop the service
+
+```
+sudo systemctl stop spacemesh.service
 ```
 
 You can verify the service is running with:
