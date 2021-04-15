@@ -28,7 +28,7 @@ At the end, you should have logged-in account and selected cloud project.
 Run the command below
 
 ```
-curl https://raw.githubusercontent.com/npty/moonbeam-node-script/master/spacemesh/create-gcloud-instance.sh \
+curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/create-gcloud-instance.sh \
     --output create-gcloud-instance.sh && \
     chmod +x create-gcloud-instance.sh && \
     ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
@@ -40,7 +40,7 @@ curl https://raw.githubusercontent.com/npty/moonbeam-node-script/master/spacemes
 
 Run the following command to run all required steps:
 
-`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/master/spacemesh/barebone-spacemesh-setup.sh | bash`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/barebone-spacemesh-setup.sh | bash`
 
 `cd work/go-spacemesh/build`
 
@@ -58,7 +58,7 @@ Then you can try running go-spacemesh with
 
 ## Setup systemd service
 
-`curl -s https://raw.githubusercontent.com/npty/moonbeam-node-script/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s YOUR_WALLET_ADDRESS`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s YOUR_WALLET_ADDRESS`
 
 ## Run Spacemesh Systemd Service
 

@@ -20,8 +20,8 @@ Enjoys 🙂
 
 The supported projects are:
 
-- [Moonbeam](https://github.com/npty/moonbeam-node-script/moonbeam)
-- [Spacemesh](https://github.com/npty/moonbeam-node-script/spacemesh)
+- [Moonbeam](https://github.com/npty/blockchain-node-scripts/moonbeam)
+- [Spacemesh](https://github.com/npty/blockchain-node-scripts/spacemesh)
 
 # License
 
