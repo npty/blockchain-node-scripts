@@ -77,8 +77,6 @@ You can verify the service is running with:
 You can also check the logs by executing:
 `sudo journalctl -f -u spacemesh.service`
 
-> Coming soon
-
 License
 =======
     Copyright 2021 nopantytonight ✨
