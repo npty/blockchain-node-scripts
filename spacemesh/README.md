@@ -44,7 +44,7 @@ Run the following command to run all required steps:
 
 ## Setup systemd service
 
-`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s -- -w YOUR_WALLET_ADDRESS`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s -- YOUR_WALLET_ADDRESS`
 
 ## Run Spacemesh Systemd Service
 
