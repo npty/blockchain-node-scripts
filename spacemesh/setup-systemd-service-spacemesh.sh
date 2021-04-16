@@ -2,7 +2,21 @@
 
 echo "Setting up systemd service..."
 
-public_key=$1
+while getopts ":w" opt; do
+  case ${opt} in
+  w)
+    public_key=$OPTARG
+    ;;
+  \?)
+    echo "Invalid Option: -$OPTARG" 1>&2
+    exit 1
+    ;;
+  :)
+    echo "Invalid Option: -$OPTARG requires an argument" 1>&2
+    exit 1
+    ;;
+  esac
+done
 
 sudo adduser spacemesh_service --system --no-create-home 2>/dev/null
 sudo mkdir -p /var/lib/spacemesh-data
