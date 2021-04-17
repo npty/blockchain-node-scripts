@@ -20,7 +20,7 @@ sudo chown -R root:root ./go
 sudo mv go /usr/local
 
 echo "export GOPATH=$HOME/work" >~/.profile
-echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/work/bin" >>~/.profile
 source ~/.profile
 
 # Build binary from source
