@@ -19,11 +19,9 @@ tar xvf $go_file
 sudo chown -R root:root ./go
 sudo mv go /usr/local
 
-if [ ! -f $HOME/.profile ]; then
-  echo "export GOPATH=$HOME/work" >~/.profile
-  echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
-  source ~/.profile
-fi
+echo "export GOPATH=$HOME/work" >~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >>~/.profile
+source ~/.profile
 
 # Build binary from source
 mkdir work && cd work
