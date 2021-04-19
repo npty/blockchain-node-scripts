@@ -39,8 +39,8 @@ gcloud compute instances create "$name" \
   --custom-cpu=4 \
   --custom-memory=8 \
   --zone=$zone \
-  --image-family=debian-10 \
-  --image-project=debian-cloud
+  --image-family=ubuntu-1804-lts  \
+  --image-project=ubuntu-os-cloud
 
 # Resize disk space for an instance to 350GB
 echo "Y" | gcloud compute disks resize $name \
@@ -61,7 +61,7 @@ gcloud compute instances add-tags "$name" \
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
 
-gcloud compute firewall-rules list | grep $FIREWALL_NAME &>/dev/null
+gcloud compute firewall-rules list | grep $FIREWALL_NAME 
 
 if [ $? == 0 ]; then
   echo "Firewall is already existed. Skipping firewall creation."

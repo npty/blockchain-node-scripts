@@ -13,4 +13,4 @@ sudo cp $(find /home -type d -name 'go-spacemesh' | head -n 1)/build/go-spacemes
 sudo curl https://discover.spacemesh.io/conf/28/config.json --output /var/lib/spacemesh-data/config.json
 sudo curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/spacemesh.service --output /etc/systemd/system/spacemesh.service
 
-echo "Moonbeam systemd service has been setup successfully."
+echo "Spacemesh systemd service has been setup successfully."
