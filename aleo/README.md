@@ -1,3 +1,5 @@
+Allow ports: 4131, 3030
+
 ## Setup Aleo Node
 
 Run the following command to run all required steps:
