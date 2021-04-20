@@ -2,8 +2,7 @@
 
 ## Setup systemd service
 
-`curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/setup-systemd-service.sh | bash -s -- 12000`
-
+`curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/meson.sh | bash`
 ## Run Systemd Service
 
 Start the service
