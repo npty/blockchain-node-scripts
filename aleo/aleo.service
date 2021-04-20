@@ -12,7 +12,7 @@ SyslogIdentifier=aleo
 SyslogFacility=local7
 KillSignal=SIGHUP
 EnvironmentFile=/etc/aleo/aleo-service.env
-ExecStart=snarkos \
+ExecStart=/var/lib/spacemesh-data \
   --rpc-username=$RPC_USERNAME \
   --rpc-password=$RPC_PASSWORD \
   --is-miner \
