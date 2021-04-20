@@ -1,0 +1,23 @@
+[Unit]
+Description="Aleo systemd service"
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+User=aleo_service
+SyslogIdentifier=aleo
+SyslogFacility=local7
+KillSignal=SIGHUP
+EnvironmentFile=/etc/aleo/aleo-service.env
+ExecStart=snarkos \
+  --rpc-username=$RPC_USERNAME \
+  --rpc-password=$RPC_PASSWORD \
+  --is-miner \
+  --miner-address=$MINER_ADDRESS \
+  --path=/var/lib/aleo-data
+
+[Install]
+WantedBy=multi-user.target
