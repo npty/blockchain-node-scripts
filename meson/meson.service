@@ -12,7 +12,7 @@ SyslogIdentifier=meson
 SyslogFacility=local7
 KillSignal=SIGHUP
 EnvironmentFile=/etc/meson/meson-service.env
-ExecStart=/home/b6111427/meson-linux-amd64/meson
+ExecStart=./home/b6111427/meson-linux-amd64/meson
 WorkingDirectory=/home/b6111427/meson-linux-amd64
 [Install]
 WantedBy=multi-user.target
