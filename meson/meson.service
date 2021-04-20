@@ -1,0 +1,17 @@
+[Unit]
+Description="Meson systemd service"
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+User=meson_service
+SyslogIdentifier=meson
+SyslogFacility=local7
+KillSignal=SIGHUP
+EnvironmentFile=/etc/meson/meson-service.env
+ExecStart=cd ./meson-linux-amd64 && ./meson
+[Install]
+WantedBy=multi-user.target
