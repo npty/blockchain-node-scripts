@@ -7,7 +7,7 @@ curl https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/m
 ```
 ## Setup systemd service
 
-`curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/meson.sh | bash`
+`curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/meson.sh | bash -s -- USERNAME`
 ## Run Systemd Service
 
 Start the service

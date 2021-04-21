@@ -4,8 +4,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=home/$USER/meson-linux-amd64/meson
-WorkingDirectory=home/$USER/meson-linux-amd64
+EnvironmentFile=/etc/meson/meson-service.env
+ExecStart=home/$USERNAME/meson-linux-amd64/meson
+WorkingDirectory=home/$USERNAME/meson-linux-amd64
 Restart=on-failure
 RestartSec=10
 StandardOutput=syslog
