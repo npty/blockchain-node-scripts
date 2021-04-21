@@ -2,7 +2,7 @@
 
 # Default value for arguments
 name=meson-node
-zone=asia-northeast2-b
+zone=asia-northeast1-b
 
 # Constants
 FIREWALL_NAME=meson-service
@@ -52,7 +52,7 @@ echo "Adding tag to $name instance..."
 
 gcloud compute instances add-tags "$name" \
   --zone=$zone \
-  --tags=$INSTANCE_TAG
+  --tags=$INSTANCE_TAG,https-server.http-server
 
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
