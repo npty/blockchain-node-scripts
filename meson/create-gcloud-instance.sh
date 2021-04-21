@@ -39,12 +39,9 @@ gcloud compute instances create "$name" \
   --machine-type=e2-small \
   --zone=$zone \
   --image-family=debian-10  \
-  --image-project=debian-cloud
-
-# Resize disk space for an instance to 420GB
-echo "Y" | gcloud compute disks resize $name \
-  --zone=$zone \
-  --size=420
+  --image-project=debian-cloud \
+  --boot-disk-size=420 \
+  --boot-disk-type=pd-standard
 
 # Restart an instance
 gcloud compute instances stop $name --zone=$zone
