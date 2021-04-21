@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/%h/meson-linux-amd64/meson
-WorkingDirectory=/%h/meson-linux-amd64
+ExecStart=%H/meson-linux-amd64/meson
+WorkingDirectory=%H/meson-linux-amd64
 Restart=on-failure
 RestartSec=10
 StandardOutput=syslog
