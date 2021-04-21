@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/%u/meson-linux-amd64/meson
-WorkingDirectory=/home/%u/meson-linux-amd64
+ExecStart=/var/lib/spacemesh-data/meson-linux-amd64/meson
+WorkingDirectory=/var/lib/spacemesh-data/meson-linux-amd64
 Restart=on-failure
 RestartSec=10
 StandardOutput=syslog
