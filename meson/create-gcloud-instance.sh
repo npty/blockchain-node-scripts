@@ -52,7 +52,7 @@ echo "Adding tag to $name instance..."
 
 gcloud compute instances add-tags "$name" \
   --zone=$zone \
-  --tags=$INSTANCE_TAG,https-server.http-server
+  --tags=$INSTANCE_TAG,https-server,http-server
 
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
