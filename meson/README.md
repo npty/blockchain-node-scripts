@@ -1,6 +1,6 @@
 ## Setup Node
 ```
-curl https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/spacemesh/create-gcloud-instance.sh \
+curl https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/create-gcloud-instance.sh \
     --output create-gcloud-instance.sh && \
     chmod +x create-gcloud-instance.sh && \
     ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
