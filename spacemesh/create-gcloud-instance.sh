@@ -2,7 +2,7 @@
 
 # Default value for arguments
 name=spacemesh-node
-zone=asia-southeast2-a
+zone=asia-northeast1-a
 
 # Constants
 FIREWALL_NAME=spacemesh-service
@@ -39,8 +39,8 @@ gcloud compute instances create "$name" \
   --custom-cpu=4 \
   --custom-memory=8 \
   --zone=$zone \
-  --image-family=ubuntu-1804-lts  \
-  --image-project=ubuntu-os-cloud
+  --image-family=debian-10 \
+  --image-project=debian-cloud
 
 # Resize disk space for an instance to 350GB
 echo "Y" | gcloud compute disks resize $name \
@@ -61,7 +61,7 @@ gcloud compute instances add-tags "$name" \
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
 
-gcloud compute firewall-rules list | grep $FIREWALL_NAME 
+gcloud compute firewall-rules list | grep $FIREWALL_NAME &>/dev/null
 
 if [ $? == 0 ]; then
   echo "Firewall is already existed. Skipping firewall creation."
