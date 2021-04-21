@@ -1,4 +1,4 @@
-sudo apt-get install wget
+sudo apt-get install -y wget
 sudo wget 'https://assets.meson.network:10443/static/terminal/v2.0.2/meson-linux-amd64.tar.gz'
 sudo tar -zxf meson-linux-amd64.tar.gz
 sudo rm -rf ~/meson-linux-amd64/config.txt
