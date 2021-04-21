@@ -1,5 +1,10 @@
 ## Setup Node
-
+```
+curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/create-gcloud-instance.sh \
+    --output create-gcloud-instance.sh && \
+    chmod +x create-gcloud-instance.sh && \
+    ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
+```
 ## Setup systemd service
 
 `curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/meson/meson.sh | bash`
