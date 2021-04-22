@@ -1,4 +1,6 @@
-Allow ports: 4131, 3030
+# Aleo Scripts
+
+Ports required: 4131, 3030
 
 ## Setup Aleo Node
 
