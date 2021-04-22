@@ -8,17 +8,7 @@ Run the following command to run all required steps:
 
 ## Setup systemd service
 
-### Step 1: Prepare Environment Variables
-
-Place the following content at /etc/aleo/aleo-service.env
-
-```
-MINER_ADDRESS=YOUR_MINER_ADDRESS
-```
-
-### Step 2: Setup systemd service
-
-`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
 
 ## Run aleo Node
 

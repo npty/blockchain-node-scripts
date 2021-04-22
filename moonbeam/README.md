@@ -42,7 +42,7 @@ This is basically put every commands [here](https://docs.moonbeam.network/gettin
 
 Run the following command to run all required steps:
 
-`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/moonbeam/barebone-moonbeam-setup.sh | bash`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/moonbeam/barebone-moonbeam-setup.sh | bash -s -- `
 
 ## Setup systemd service
 
