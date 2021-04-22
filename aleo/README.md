@@ -32,6 +32,7 @@ First stop the node by `sudo systemctl stop aleo`
 Then, rerun the following command.
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/barebone-aleo-setup.sh | bash`
+
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
 
 Next, run `sudo systemctl daemon-reload` to apply the updated service.
