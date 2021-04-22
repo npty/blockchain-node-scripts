@@ -13,8 +13,6 @@ Run the following command to run all required steps:
 Place the following content at /etc/aleo/aleo-service.env
 
 ```
-RPC_USERNAME=YOUR_RPC_USERNAME
-RPC_PASSWORD=YOUR_RPC_PASSWORD
 MINER_ADDRESS=YOUR_MINER_ADDRESS
 ```
 

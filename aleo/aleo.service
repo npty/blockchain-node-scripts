@@ -7,8 +7,6 @@ Restart=always
 RestartSec=10
 EnvironmentFile=/etc/aleo/aleo-service.env
 ExecStart=/var/lib/aleo-data/snarkos \
-  --rpc-username $RPC_USERNAME \
-  --rpc-password $RPC_PASSWORD \
   --miner-address $MINER_ADDRESS \
   --is-miner
 
