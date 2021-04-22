@@ -2,7 +2,7 @@
 
 Ports required: 4131, 3030
 
-## Setup Aleo Node
+## Install deps and build Aleo binary
 
 Run the following command to run all required steps:
 
@@ -12,7 +12,7 @@ Run the following command to run all required steps:
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
 
-## Run aleo Node
+## Run Aleo systemd service
 
 ```
 sudo systemctl enable aleo.service
@@ -25,10 +25,15 @@ You can verify the service is running with:
 You can also check the logs by executing:
 `sudo journalctl -f -u aleo.service`
 
-## Upgrade aleo Node
+## Upgrade Aleo Node
 
-`sudo systemctl stop aleo`
+First stop the node by `sudo systemctl stop aleo`
 
-Then, rerun setup aleo Node script.
+Then, rerun the following command.
 
-Once it completed, run `sudo systemctl start aleo.service`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/barebone-aleo-setup.sh | bash`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
+
+Next, run `sudo systemctl daemon-reload` to apply the updated service.
+
+Finally, run `sudo systemctl start aleo.service`
