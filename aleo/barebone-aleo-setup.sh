@@ -21,4 +21,5 @@ echo "Checkout version: $latest_tag"
 git checkout ${latest_tag}
 
 # Build binary
+sudo chown -R $(whoami) $HOME/.cargo/
 cargo build --release --verbose
