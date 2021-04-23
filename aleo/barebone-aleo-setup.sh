@@ -2,7 +2,9 @@
 sudo apt-get install -y git make build-essential cmake clang libssl-dev pkg-config
 
 # Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+if ! command -v cargo &>/dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+fi
 
 source $HOME/.cargo/env
 
