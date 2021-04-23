@@ -11,6 +11,17 @@ RAM: 32GB
 OS: Ubuntu 18 or 20
 Storage: 128GB
 
+## Create Google Cloud Compute Instance
+
+Run the command below
+
+```
+curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/create-gcloud-instance.sh \
+    --output create-gcloud-instance.sh && \
+    chmod +x create-gcloud-instance.sh && \
+    ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
+```
+
 ## Install deps and build Aleo binary
 
 Run the following command to run all required steps:
