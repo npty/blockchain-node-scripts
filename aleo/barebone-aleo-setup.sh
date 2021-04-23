@@ -9,12 +9,12 @@ fi
 source $HOME/.cargo/env
 
 # Install snarkos
-cd work
+cd $HOME/work
 
 if [ ! -d $HOME/work/snarkOS ]; then
   git clone https://github.com/AleoHQ/snarkOS
 fi
-cd snarkOS
+cd $HOME/work/snarkOS
 git pull origin master
 latest_tag=$(curl --silent "https://api.github.com/repos/AleoHQ/snarkOS/releases/latest" | jq -r .tag_name)
 echo "Checkout version: $latest_tag"
