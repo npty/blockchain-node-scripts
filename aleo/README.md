@@ -7,8 +7,7 @@ https://aleo.org/
 Ports required: 4131, 3030
 
 CPU: 4 cores
-RAM: 32GB
-OS: Ubuntu 18 or 20
+RAM: 4 GB
 Storage: 128GB
 
 ## Create Google Cloud Compute Instance
