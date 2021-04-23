@@ -19,6 +19,8 @@ Run the following command to run all required steps:
 
 ## Generate wallet
 
+Run `aleo new`
+
 ## Setup systemd service
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
