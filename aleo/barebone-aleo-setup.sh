@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt-get install -y git make build-essential cmake clang libssl-dev pkg-config
+sudo apt-get install -y git make build-essential cmake clang libssl-dev pkg-config jq
 
 # Install Rust
 if ! command -v cargo &>/dev/null; then
@@ -10,10 +10,14 @@ source $HOME/.cargo/env
 
 # Install snarkos
 cd work
-git clone https://github.com/AleoHQ/snarkOS
+
+if [ ! -d $HOME/work/snarkOS ]; then
+  git clone https://github.com/AleoHQ/snarkOS
+fi
 cd snarkOS
-latest_tag=$(git describe --tags)
-echo "Checkout version $latest_tag"
+git pull origin master
+latest_tag=$(curl --silent "https://api.github.com/repos/AleoHQ/snarkOS/releases/latest" | jq -r .tag_name)
+echo "Checkout version: $latest_tag"
 git checkout ${latest_tag}
 
 # Build binary
