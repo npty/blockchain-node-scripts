@@ -9,6 +9,7 @@ fi
 source $HOME/.cargo/env
 
 # Install snarkos
+mkdir -p work
 cd $HOME/work
 
 if [ ! -d $HOME/work/snarkOS ]; then

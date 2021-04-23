@@ -1,12 +1,23 @@
 # Aleo Scripts
 
+https://aleo.org/
+
+## System Requirement
+
 Ports required: 4131, 3030
+
+CPU: 4 cores
+RAM: 32GB
+OS: Ubuntu 18 or 20
+Storage: 128GB
 
 ## Install deps and build Aleo binary
 
 Run the following command to run all required steps:
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/barebone-aleo-setup.sh | bash`
+
+## Generate wallet
 
 ## Setup systemd service
 
