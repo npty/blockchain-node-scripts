@@ -72,4 +72,4 @@ Finally, run `sudo systemctl start aleo.service`
 
 ## Monitoring
 
-curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s -- NODE_IP_ADDRESS SECONDS_TO_RELOAD`
+curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s -- NODE_IP_ADDRESS SECONDS_TO_RELOAD
