@@ -61,3 +61,15 @@ Then, rerun the following command.
 Next, run `sudo systemctl daemon-reload` to apply the updated service.
 
 Finally, run `sudo systemctl start aleo.service`
+
+## Peers IP List
+
+`64.225.91.42:4131`
+`91.122.52.83:4131`
+`162.55.39.56:4131`
+`194.233.65.94:4131`
+`65.21.53.235:4131`
+
+## Monitoring
+
+curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s -- NODE_IP_ADDRESS SECONDS_TO_RELOAD`
