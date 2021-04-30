@@ -9,7 +9,7 @@ EnvironmentFile=/etc/aleo/aleo-service.env
 ExecStart=/var/lib/aleo-data/snarkos \
   --miner-address $MINER_ADDRESS \
   --is-miner \
-  --connect 50.18.246.201:4131
+  --verbose 3
 
 [Install]
 WantedBy=multi-user.target

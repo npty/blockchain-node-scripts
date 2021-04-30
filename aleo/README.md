@@ -10,7 +10,9 @@ CPU: 4 cores
 RAM: 4 GB
 Storage: 128GB
 
-## Create Google Cloud Compute Instance
+## Create Google Cloud Compute Instance (Optional)
+
+> Skip this if you already have an instance.
 
 Run the command below
 
