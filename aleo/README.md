@@ -2,11 +2,11 @@
 
 https://aleo.org/
 
-## System Requirement
+## Minimum System Requirement
 
 - Ports: 4131, 3030
 - CPU: 4 cores
-- RAM: 4 GB
+- RAM: 6 GB
 - Storage: 128GB
 - OS: Debian 10
 
