@@ -35,10 +35,12 @@ Run `aleo new`
 
 ## Setup systemd service
 
-`Enable Mining`
+**Enable Mining**
+
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
 
-`Disable Mining`
+**Disable Mining**
+
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash`
 
 ## Run Aleo systemd service
