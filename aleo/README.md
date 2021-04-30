@@ -23,6 +23,8 @@ curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/cr
     ./create-gcloud-instance.sh -n YOUR_INSTANCE_NAME
 ```
 
+> Note: Replace YOUR_INSTANCE_NAME with your desired name
+
 ## Install deps and build Aleo binary
 
 Run the following command to run all required steps:
@@ -38,6 +40,8 @@ Run `aleo new`
 **Enable Mining**
 
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
+
+> Note: Replace your MINER_ADDRESS with your aleo wallet address
 
 **Disable Mining**
 
@@ -73,3 +77,11 @@ Finally, run `sudo systemctl start aleo.service`
 ## Monitoring
 
 curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s -- NODE_IP_ADDRESS SECONDS_TO_RELOAD
+
+- NODE_IP_ADDRESS: Your node ip address
+- SECONDS_TO_RELOAD: Interval in seconds to refresh
+
+For example:
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s 10.11.12.13 10`
+
+It means monitoring node address `10.11.12.13` for every `10` seconds
