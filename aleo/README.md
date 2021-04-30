@@ -14,7 +14,7 @@ https://aleo.org/
 
 > Skip this if you already have an instance.
 
-Run the command below (Required gcloud cli)
+Run the command below (Required [gcloud](https://cloud.google.com/sdk/docs/quickstart))
 
 ```
 curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/create-gcloud-instance.sh \
