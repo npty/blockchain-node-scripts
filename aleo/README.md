@@ -8,13 +8,13 @@ https://aleo.org/
 - CPU: 4 cores
 - RAM: 4 GB
 - Storage: 128GB
-- OS: Debian
+- OS: Debian 10
 
 ## Create Google Cloud Compute Instance (Optional)
 
 > Skip this if you already have an instance.
 
-Run the command below
+Run the command below (Required gcloud cli)
 
 ```
 curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/create-gcloud-instance.sh \
@@ -35,7 +35,11 @@ Run `aleo new`
 
 ## Setup systemd service
 
+`Enable Mining`
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash -s -- MINER_ADDRESS`
+
+`Disable Mining`
+`curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/setup-systemd-service.sh | bash`
 
 ## Run Aleo systemd service
 

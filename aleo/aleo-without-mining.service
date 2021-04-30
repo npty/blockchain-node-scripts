@@ -1,0 +1,13 @@
+[Unit]
+Description="Aleo systemd service"
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=10
+EnvironmentFile=/etc/aleo/aleo-service.env
+ExecStart=/var/lib/aleo-data/snarkos \
+  --verbose 3
+
+[Install]
+WantedBy=multi-user.target
