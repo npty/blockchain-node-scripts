@@ -4,11 +4,11 @@ https://aleo.org/
 
 ## System Requirement
 
-Ports required: 4131, 3030
-
-CPU: 4 cores
-RAM: 4 GB
-Storage: 128GB
+- Ports: 4131, 3030
+- CPU: 4 cores
+- RAM: 4 GB
+- Storage: 128GB
+- OS: Debian
 
 ## Create Google Cloud Compute Instance (Optional)
 
