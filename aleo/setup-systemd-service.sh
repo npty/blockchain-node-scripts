@@ -10,7 +10,7 @@ sudo mkdir -p /etc/aleo
 sudo cp $HOME/work/snarkOS/target/release/snarkos /var/lib/aleo-data
 sudo chown aleo_service /var/lib/aleo-data
 
-if [ -z '$miner_address']; then
+if [ -z "$miner_address" ]; then
   sudo curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/aleo-without-mining.service --output /etc/systemd/system/aleo.service
 else
   echo "MINER_ADDRESS=$miner_address" | sudo tee /etc/aleo/aleo-service.env
