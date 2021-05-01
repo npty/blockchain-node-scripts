@@ -3,13 +3,13 @@ Description="Aleo systemd service"
 After=network.target
 
 [Service]
+User=aleo_service
 Restart=always
 RestartSec=10
 EnvironmentFile=/etc/aleo/aleo-service.env
 ExecStart=/var/lib/aleo-data/snarkos \
   --miner-address $MINER_ADDRESS \
   --is-miner \
-  --path $HOME/.snarkOS \
   --verbose 3
 
 [Install]
