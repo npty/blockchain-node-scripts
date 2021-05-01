@@ -58,7 +58,7 @@ You can verify the service is running with:
 `sudo systemctl status aleo.service`
 
 You can also check the logs by executing:
-`sudo journalctl -f -u aleo.service`
+`sudo journalctl -f -o cat -u aleo.service`
 
 ## Upgrade Aleo Node
 
