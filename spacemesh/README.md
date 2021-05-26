@@ -35,13 +35,6 @@ curl https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/s
 ```
 
 > Note: Replace YOUR_INSTANCE_NAME with your desired name.
-
-## Setup Spacemesh Node
-
-Run the following command to run all required steps:
-
-`curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/spacemesh/barebone-spacemesh-setup.sh | bash`
-
 ## Setup systemd service
 
 `curl -s https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/spacemesh/setup-systemd-service-spacemesh.sh | bash -s -- YOUR_WALLET_ADDRESS`
