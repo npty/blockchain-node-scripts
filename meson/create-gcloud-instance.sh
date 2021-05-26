@@ -44,7 +44,7 @@ gcloud compute instances create "$name" \
 # Resize disk space for an instance to 420GB
 echo "Y" | gcloud compute disks resize $name \
   --zone=$zone \
-  --size=420
+  --size=450
 
 
 # Restart an instance
