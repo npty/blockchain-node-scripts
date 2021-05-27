@@ -2,15 +2,23 @@
 
 echo "Setting up systemd service..."
 
-public_key=$1
+wallet_address=$1
 
-sudo adduser spacemesh_service --system --no-create-home 2>/dev/null
-sudo mkdir -p /var/lib/spacemesh-data
+sudo curl https://storage.googleapis.com/go-spacemesh-release-builds/v0.1.29/ubuntu-latest/go-spacemesh -o go-spacemesh
+sudo chmod 777 go-spacemesh
+
+sudo curl https://github.com/spacemeshos/cli-wallet/releases/download/v0.1.22/cli_wallet_linux_amd64 -o cli_wallet_linux_amd64
+sudo chmod 777 cli_wallet_linux_amd64
+
+sudo curl https://storage.googleapis.com/spacecraft-data/tweedlelite128-archive/config.json -o config.json
+sudo chmod 777 config.json
+
 sudo mkdir -p /etc/spacemesh
-echo "PUBLIC_KEY=$public_key" | sudo tee /etc/spacemesh/spacemesh-service.env
-sudo chown -R spacemesh_service /var/lib/spacemesh-data
-sudo cp $(find /home -type d -name 'go-spacemesh' | head -n 1)/build/go-spacemesh /var/lib/spacemesh-data
-sudo curl https://discover.spacemesh.io/conf/28/config.json --output /var/lib/spacemesh-data/config.json
-sudo curl https://raw.githubusercontent.com/npty/blockchain-node-scripts/master/spacemesh/spacemesh.service --output /etc/systemd/system/spacemesh.service
+echo "WALLET_ADDR=$wallet_address" | sudo tee /etc/spacemesh/spacemesh-service.env
 
-echo "Moonbeam systemd service has been setup successfully."
+sudo curl https://raw.githubusercontent.com/B6111427/blockchain-node-scripts/master/spacemesh/spacemesh.service --output /etc/systemd/system/spacemesh.service
+
+echo "Spacemesh systemd service has been setup successfully."
+echo "Use ""./cli_wallet_linux_amd64"". to access wallet"
+sudo systemctl enable spacemesh.service
+sudo systemctl start spacemesh.service

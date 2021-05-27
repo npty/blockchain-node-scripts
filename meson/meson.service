@@ -1,0 +1,16 @@
+[Unit]
+Description=Service that keeps running the echo-server from startup.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/b6111427/meson-linux-amd64/meson
+WorkingDirectory=/home/b6111427/meson-linux-amd64
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n
+
+[Install]
+WantedBy=multi-user.target

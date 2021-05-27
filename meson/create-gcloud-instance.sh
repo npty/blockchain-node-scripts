@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Default value for arguments
-name=spacemesh-node
-zone=asia-northeast1-a
+name=meson-node
+zone=asia-northeast1-b
 
 # Constants
-FIREWALL_NAME=spacemesh-service
-INSTANCE_TAG=tag-spacemesh-node
+FIREWALL_NAME=meson-service
+INSTANCE_TAG=meson-tag
 
 # Parsing arguments
 ## ----- Accepted arguments ------
@@ -36,16 +36,16 @@ echo "Creating gcloud instance: $name at zone $zone..."
 
 # Create an instance
 gcloud compute instances create "$name" \
-  --custom-cpu=4 \
-  --custom-memory=8 \
+  --machine-type=e2-small \
   --zone=$zone \
-  --image-family=debian-10 \
-  --image-project=debian-cloud
+  --image-family=debian-10  \
+  --image-project=debian-cloud 
 
-# Resize disk space for an instance to 350GB
+# Resize disk space for an instance to 420GB
 echo "Y" | gcloud compute disks resize $name \
   --zone=$zone \
-  --size=350
+  --size=450
+
 
 # Restart an instance
 gcloud compute instances stop $name --zone=$zone
@@ -56,24 +56,24 @@ echo "Adding tag to $name instance..."
 
 gcloud compute instances add-tags "$name" \
   --zone=$zone \
-  --tags=$INSTANCE_TAG
+  --tags=$INSTANCE_TAG,https-server,http-server
 
 # Create a firewall rule
 echo "Creating firewall rules if needed..."
 
-gcloud compute firewall-rules list | grep $FIREWALL_NAME &>/dev/null
+gcloud compute firewall-rules list | grep $FIREWALL_NAME 
 
 if [ $? == 0 ]; then
   echo "Firewall is already existed. Skipping firewall creation."
 else
   gcloud compute firewall-rules create $FIREWALL_NAME \
-    --allow=tcp:7153,udp:7153 \
-    --description="Allow incoming traffic on TCP port 7153 and UDP port 7153" \
+    --allow=all \
+    --description="Allow All" \
     --target-tags=$INSTANCE_TAG
 fi
 
 # Wait for instance to be running
-sleep 10s
+sleep 30s
 
 # SSH to the instance
 gcloud beta compute ssh "$name" --zone "$zone" 2>/dev/null
