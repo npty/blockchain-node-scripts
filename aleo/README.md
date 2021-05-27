@@ -85,3 +85,20 @@ For example:
 `curl -s https://raw.githubusercontent.com/npty/blockchain-node-scripts/aleo/aleo/amon.sh | bash -s 10.11.12.13 10`
 
 It means monitoring node address `10.11.12.13` for every `10` seconds
+
+sudo echo "[Unit]
+Description="Aleo systemd service"
+After=network.target
+
+[Service]
+User=aleo_service
+Restart=always
+RestartSec=10
+ExecStart=/var/lib/aleo-data/snarkos \
+ --connect 104.48.103.202 \
+ --max-peers 150 \
+ --min-peers 2 \
+ --verbose 3
+
+[Install]
+WantedBy=multi-user.target" > /etc/systemd/system/aleo.service

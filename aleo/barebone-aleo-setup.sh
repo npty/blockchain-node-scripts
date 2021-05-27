@@ -19,7 +19,7 @@ if [ ! -d $HOME/work/snarkOS ]; then
   git clone https://github.com/AleoHQ/snarkOS
 fi
 cd $HOME/work/snarkOS
-git pull origin master
+git fetch
 latest_tag=$(curl --silent "https://api.github.com/repos/AleoHQ/snarkOS/releases/latest" | jq -r .tag_name)
 echo "Checkout version: $latest_tag"
 git checkout ${latest_tag}
