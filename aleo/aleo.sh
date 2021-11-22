@@ -6,25 +6,28 @@ exists()
 if exists curl; then
         echo ''
 else
-  sudo apt install curl -y < "/dev/null"
+  sudo apt-get install curl -y < "/dev/null"
 fi
-sudo apt update
-sudo apt upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
-echo -e '\n\e[42mInstall dependencies\e[0m\n' && sleep 1
-sudo apt install make clang pkg-config libssl-dev build-essential git curl ntp jq llvm -y < "/dev/null"
+#install docker
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get install -y \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-#install rust
-sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
+#install tmux
+sudo apt-get install tmux
 
-#install wallet
-git clone https://github.com/AleoHQ/aleo && cd aleo
-cargo install --path .
+tmux
 
-cd $HOME
+sudo docker run -it --rm --name setupcontrib --env COORD_URL=https://inner-ceremony.aleo.org aleohq/setup-contributor:latest
 
-#install snark
-git clone https://github.com/AleoHQ/snarkOS && cd snarkOS
-cargo build --release
